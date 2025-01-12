@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(14, 40px);
+  grid-gap: 2px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(14, 40px);
+  grid-gap: 2px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg0_s);
+  border: 1px solid var(--fg);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cell.active {
+  background-color: var(--fg0);
+}
+
+.button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: var(--fg);
+  color: var(--bg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
