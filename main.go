@@ -50,7 +50,7 @@ Modes:
 
     2. Daemon Mode:
        Run with -d flag and specify an option.
-       Example: %s -d -f pattern.csv
+       Example: %s -d -m custom -f pattern.csv
 
 For more information, visit: https://github.com/blaster4385/deepcool-display-linux
 `, os.Args[0], os.Args[0], os.Args[0])
