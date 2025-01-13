@@ -106,6 +106,7 @@ func daemonMode(app *App) {
 }
 
 func handleDaemonPattern(app *App, filename string, ctx context.Context) {
+	fmt.Println("Startng custom mode...")
 	grid, err := app.ParseCSV(filename)
 	if err != nil {
 		handleError(fmt.Errorf("parsing CSV file: %w", err))
@@ -120,6 +121,7 @@ func handleDaemonPattern(app *App, filename string, ctx context.Context) {
 func daemonTemperatureDisplay(app *App, ctx context.Context) {
 	ticker := time.NewTicker(3 * time.Second)
 	defer ticker.Stop()
+	fmt.Println("Startng temperature mode...")
 
 	go func() {
 		for {
@@ -154,6 +156,7 @@ func daemonTemperatureDisplay(app *App, ctx context.Context) {
 func daemonUsageDisplay(app *App, ctx context.Context) {
 	ticker := time.NewTicker(3 * time.Second)
 	defer ticker.Stop()
+	fmt.Println("Startng usage mode...")
 
 	go func() {
 		for {

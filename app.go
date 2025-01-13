@@ -166,12 +166,11 @@ func (a *App) sendCommand(data []byte) error {
 		return fmt.Errorf("failed to get output endpoint: %v", err)
 	}
 
-	written, err := outEndpoint.Write(data)
-	if err == nil {
-		fmt.Printf("Success on endpoint 0x%02x! Sent %d bytes\n", endpoint, written)
-		return nil
+	_, err = outEndpoint.Write(data)
+	if err != nil {
+		return fmt.Errorf("failed to send on any endpoint")
 	}
-	return fmt.Errorf("failed to send on any endpoint")
+	return nil
 }
 
 func (a *App) ExportGrid(filename string, grid [][]bool) error {
