@@ -6,6 +6,7 @@ toolchain go1.23.4
 
 require (
 	github.com/google/gousb v1.1.3
+	github.com/spf13/pflag v1.0.5
 	github.com/wailsapp/wails/v2 v2.9.2
 )
 

@@ -32,10 +32,9 @@ You can run the applications with or without providing any options. Running it w
 ```
 Options:
   -d, --daemon       Run the application in daemon mode
+  -m, --mode         Specify the mode (temp, usage or custom)
   -f, --file         Specify the CSV file containing the pattern data (This is required in daemon mode)
-  -t, --temperature  Display the CPU temperature
   -c, --celcius      Display the CPU temperature in celcius
-  -u, --usage        Display the CPU usage
 
 Commands:
   -h, --help         Print help
@@ -45,10 +44,10 @@ Commands:
 Run the application in daemon mode to display the pattern from a CSV file:
 
 ```bash
-./deepcool-display-linux -d -f /path/to/pattern.csv
+./deepcool-display-linux -d -m custom -f /path/to/pattern.csv
 ```
 
-In daemon mode, the \`-f\` or \`--file\` flag is required to specify the CSV file containing the pattern.
+In custom mode, the \`-f\` or \`--file\` flag is required to specify the CSV file containing the pattern.
 
 ### Exporting patterns to CSV
 
