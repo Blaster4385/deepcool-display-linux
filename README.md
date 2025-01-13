@@ -40,6 +40,7 @@ Commands:
   -h, --help         Print help
   -v, --version      Print version
 ```
+
 ### Daemon Mode
 Run the application in daemon mode to display the pattern from a CSV file:
 
@@ -52,6 +53,42 @@ In custom mode, the \`-f\` or \`--file\` flag is required to specify the CSV fil
 ### Exporting patterns to CSV
 
 The GUI has an option to export the current pattern to a CSV file. This can be done by clicking the "Export Layout" button. The CSV files are stored in ~/.config/deepcool-display-linux.
+
+## Automatic Startup using systemd
+
+1. Copy the binary to /usr/bin:
+
+```bash
+sudo cp deepcool-display-linux /usr/bin
+```
+
+2. Create a service file:
+
+```bash
+sudo nano /etc/systemd/system/deepcool-display-linux.service
+```
+
+3. Add the following to the file:
+
+```bash
+[Unit]
+Description=DeepCool Display Linux
+
+[Service]
+ExecStart=/usr/bin/deepcool-display-linux -d -m temp -c
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+4. Enable the service:
+
+```bash
+sudo systemctl enable --now deepcool-display-linux.service
+```
+
+ **Note:** The application will automatically start when the system is booted.
 
 ## Development
 
@@ -68,6 +105,7 @@ On Arch Linux, you can use a AUR helper to install them:
 ```bash
 yay -S go npm wails
 ```
+
 ### Building
 
 1. Clone the repository:
@@ -81,21 +119,25 @@ git clone https://github.com/Blaster4385/deepcool-display-linux
 ```bash
 cd deepcool-display-linux
 ```
+
 3. Run a development server:
 
 ```bash
 make dev
 ```
+
 4. Build a release:
 
 ```bash
 make build
 ```
+
 5. Clean up:
 
 ```bash
 make clean
 ```
+
 ## License
 
 This project is licensed under the GPLv2 License - see the [LICENSE](LICENSE) file for details.
