@@ -49,8 +49,11 @@ For more information, visit: https://github.com/blaster4385/deepcool-display-lin
 
 func main() {
 	flag.BoolVar(&daemonFlag, "daemon", false, "Run as daemon")
+	flag.BoolVar(&daemonFlag, "d", false, "Run as daemon")
 	flag.StringVar(&filename, "file", "", "CSV file")
+	flag.StringVar(&filename, "f", "", "CSV file")
 	flag.BoolVar(&helpFlag, "help", false, "Show help message")
+	flag.BoolVar(&helpFlag, "h", false, "Show help message")
 	flag.BoolVar(&versionFlag, "version", false, "Show app version")
 	flag.BoolVar(&versionFlag, "v", false, "Show app version")
 	flag.Parse()
