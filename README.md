@@ -1,6 +1,6 @@
 # DeepCool Display Linux
 
-This application is a replacement of the original DeepCool Windows application for the LP360 AIO cooler. I may add support for the entire LP series and any other new devices that use a similar pixel display. This currently only supports drawing custom patterns on the display. Support for displaying CPU temprature and usage will be added in future releases.
+This application is a replacement of the original DeepCool Windows application for the LP360 AIO cooler. I may add support for the entire LP series and any other new devices that use a similar pixel display. This supports drawing custom patterns on the as well as displaying the CPU temperature and usage.
 
 Special thanks to [@Nortank12](https://github.com/Nortank12) for his work on [deepcool-digital-linux](https://github.com/Nortank12/deepcool-digital-linux). I would recommend checking out his app for additional functionality and support for other devices. Additionally, thanks to [@rohan09-raj](https://github.com/rohan09-raj) for figuring out the logic of the commands for creating the patterns.
 
@@ -33,6 +33,9 @@ You can run the applications with or without providing any options. Running it w
 Options:
   -d, --daemon       Run the application in daemon mode
   -f, --file         Specify the CSV file containing the pattern data (This is required in daemon mode)
+  -t, --temperature  Display the CPU temperature
+  -c, --celcius      Display the CPU temperature in celcius
+  -u, --usage        Display the CPU usage
 
 Commands:
   -h, --help         Print help
